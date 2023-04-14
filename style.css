@@ -1,0 +1,328 @@
+/* ---------------GENERAL SETTINGS-------------------- */
+:root {
+	/* -----text color---- */
+	--first-text-color: #434455;
+	--second-text-color: #ffffff;
+	--third-text-color: #2e2f42;
+	--fourth-text-color: #4d5ae5;
+	--fifth-text-color: #f4f4fd;
+	--sixth-text-color: #e7e9fc;
+	/* -----background color----------*/
+	--first-background-color: #2e2f42;
+	--second-background-color: #f4f4fd;
+	--third-background-color: #4d5ae5;
+	--fourth-background-color: #ffffff;
+	/* -------accent-color ----------*/
+	--accent-color: rgba(0, 0, 0, 0.5);
+	/* ---------border color--------- */
+	--border-color-img-portfolio: #e7e9fc;
+	/* --------- found -------------- */
+	--secondary-found: "Raleway", sans-serif;
+	/* -----settings padding, margin and gap*/
+	--basic-settings-padding-section: 120px;
+	--secondary-settings-padding-section: 96px;
+	--basic-settings-gap: 24px;
+	--basic-settings-margin: 72px;
+	--secondary-settings-margin: 8px;
+	/* -------border radius-------------- */
+	--basic-border-radius: 4px;
+	/* ---------- transition ------------- */
+	--transition-duration: 250ms;
+	--transition-timing-function: cubic-bezier (0.4, 0, 0.2, 1);
+}
+body {
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 1.21;
+	color: rgba(255, 255, 255, 0.87);
+	background: linear-gradient(45deg, #4568dc, #b06ab3);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+p,
+fieldset {
+	margin: 0;
+}
+fieldset,
+li,
+ul {
+	list-style: none;
+	padding: 0;
+	border: none;
+}
+/* ------------------UNIVERSAL CLASSES--------------------- */
+/* fading title effect */
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	white-space: nowrap;
+	clip-path: inset(100%);
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+/* delete marker */
+.list {
+	list-style: none;
+}
+/* delete underline */
+.link {
+	text-decoration: none;
+	color: inherit;
+}
+/* main title attributes */
+.title {
+	font-size: 24px;
+	text-transform: capitalize;
+	text-align: center;
+	font-weight: 700;
+	color: rgb(0, 0, 0);
+	margin-left: auto;
+	margin-right: auto;
+}
+/* main button attributes */
+button {
+	display: block;
+	margin: auto;
+	padding: 15px 25px;
+	border-radius: 10px;
+	text-transform: uppercase;
+	font-weight: bold;
+	background: transparent;
+	border: 1px solid #fff;
+	color: #fff;
+	cursor: pointer;
+	transition: 0.5s;
+}
+
+button:is(:focus, :hover) {
+	background: rgba(0, 0, 0, 0.5);
+	border-color: rgba(0, 0, 0, 0.3);
+}
+.container {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+/*!##################### 0px-767px ########################### */
+@media screen and (max-width: 767px) {
+	.howtomade-section {
+		padding-top: 72px;
+	}
+	.howtomade-img,
+	.howtomade-img-wrap {
+		position: relative;
+	}
+	.howtomade-video-btn,
+	.howtomade-icon-wrap-mobile {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 11;
+	}
+	.howtomade-video-btn {
+		width: 35px;
+		height: 35px;
+		background-color: transparent;
+		border-radius: 50%;
+		outline: none;
+		border: none;
+	}
+	.howtomade-icon-mobile {
+		stroke: #fff;
+		fill: none;
+	}
+	.howtomade-icon-wrap,
+	.howtomade-icon {
+		display: none;
+	}
+	.howtomade-img {
+		position: relative;
+		border-radius: 15px;
+		z-index: 11;
+	}
+	.hidden {
+		display: none;
+	}
+	.howtomade-video {
+		position: absolute;
+		top: 0;
+		left: 0;
+		border-radius: 15px;
+		border: 2px solid var(--Orange);
+		width: 100%;
+		max-width: 335px;
+		height: 100%;
+		z-index: 10;
+		background-color: black;
+	}
+}
+/* !##################### 768px-1199px ########################### */
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+	.howtomade-section {
+		padding-top: 100px;
+	}
+	.howtomade-container {
+		max-width: 648px;
+	}
+	.howtomade-img {
+		width: 100%;
+	}
+	.howtomade-list {
+		padding-right: 70px;
+	}
+	.howtomade-desc-wrap {
+		max-width: 614px;
+	}
+}
+/* !##################### 0px-768px ########################### */
+/* ? ======= HOWTOMADE SECTION ====== */
+.howtomade-title {
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 1.17;
+	text-align: center;
+	letter-spacing: -0.03em;
+	text-transform: uppercase;
+	margin-bottom: 32px;
+}
+.howtomade-title-span {
+	color: var(--Orange);
+}
+.howtomade-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+.howtomade-vido-img-wrap,
+.howtomade-img-wrap {
+	position: relative;
+}
+.howtomade-img {
+	position: relative;
+	border-radius: 15px;
+	z-index: 11;
+}
+.hidden {
+	display: none;
+}
+.howtomade-video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 15px;
+	border: 2px solid var(--Orange);
+	width: 100%;
+	max-width: 335px;
+	height: 100%;
+	z-index: 10;
+	background-color: black;
+}
+.howtomade-desc-wrap {
+	padding: 20px 14px;
+	background-color: var(--Main-white);
+	border-radius: 15px;
+}
+.howtomade-subtitle {
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 1.33;
+	margin-bottom: 28px;
+}
+.howtomade-list {
+	display: flex;
+	flex-direction: column;
+	row-gap: 18px;
+}
+.howtomade-item {
+	display: flex;
+	position: relative;
+	padding-left: 16px;
+}
+.howtomade-item::before {
+	content: "";
+	position: absolute;
+	width: 8px;
+	height: 8px;
+	left: 0px;
+	top: 5px;
+	background-color: #4c4c4c;
+	border: 1px solid #eceded;
+	border-radius: 50%;
+}
+.howtomade-item-text {
+	line-height: 1.29;
+}
+/* !##################### 768px-1199px ########################### */
+@media screen and (min-width: 768px) {
+	.howtomade-video {
+		max-width: 614px;
+	}
+	.howtomade-icon-wrap-mobile,
+	.howtomade-icon-mobile {
+		display: none;
+	}
+	.howtomade-video-btn,
+	.howtomade-icon-wrap {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 11;
+	}
+	.howtomade-video-btn {
+		width: 44px;
+		height: 44px;
+		background-color: transparent;
+		border-radius: 50%;
+		outline: none;
+		border: none;
+	}
+
+	.howtomade-icon {
+		stroke: var(--Main-white);
+		fill: orange;
+	}
+	.howtomade-desc-wrap {
+		padding: 32px;
+	}
+	.howtomade-title {
+		margin-bottom: 50px;
+	}
+	.howtomade-subtitle {
+		max-width: 350px;
+		margin-bottom: 20px;
+	}
+}
+/* !##################### < 1200px ########################### */
+@media screen and (min-width: 1200px) {
+	.howtomade-section {
+		padding-top: 128px;
+	}
+	.howtomade-wrapper {
+		flex-wrap: nowrap;
+	}
+	.howtomade-list {
+		row-gap: 24px;
+		padding-right: 26px;
+	}
+	.howtomade-img {
+		max-width: 600px;
+	}
+	.howtomade-video {
+		max-width: 600px;
+	}
+}
