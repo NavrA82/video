@@ -1,44 +1,48 @@
-const image = document.getElementById('howtomade-image');
-const video = document.getElementById('howtomade-video-id');
-const playButton = document.getElementById('howtomade-video-button-id');
-let savedTime = 0;
+const video = document.getElementById("howtomade-video-id");
+const playButton = document.getElementById("howtomade-video-button-id");
+const image = document.getElementById("howtomade-image");
 
-playButton.addEventListener('click', function () {
-   video.play();
-   image.style.zIndex = 0;
-   playButton.classList.add('hidden');
-   video.style.zIndex = 1;
+// Функція для зміни zIndex
+function setZIndex(element, index) {
+	element.style.zIndex = index;
+}
+// відео починає відтворення при кліку по кнопці
+playButton.addEventListener("click", function () {
+	video.play();
 });
-
-video.addEventListener('ended', function () {
-   image.style.zIndex = 1;
-   playButton.classList.remove('hidden');
-   video.style.zIndex = 0;
+// відео починає відтворення при кліку по фото
+image.addEventListener("click", function () {
+	if (video.paused) {
+		video.play();
+	} else {
+		video.pause();
+	}
 });
-
-video.addEventListener('click', function () {
-   if (video.paused) {
-      video.play();
-   } else {
-      savedTime = video.currentTime;
-      video.pause();
-   }
+// При початку відтворення відео
+video.addEventListener("play", function () {
+	setZIndex(playButton, 0);
+	setZIndex(image, 11);
+	image.style.opacity = 0;
+	image.style.height = "88%";
 });
-
-video.addEventListener('play', function () {
-   if (video.currentTime === 0 && savedTime) {
-      video.currentTime = savedTime;
-      savedTime = 0;
-   }
+// При паузі (зупинці) відео
+video.addEventListener("pause", function () {
+	setZIndex(playButton, 11);
+	setZIndex(image, 11);
+	image.style.opacity = 0;
+	image.style.height = "88%";
 });
-
-video.addEventListener('click', function () {
-   if (video.paused && video.currentTime !== video.duration) {
-      savedTime = video.currentTime;
-      video.play();
-      playButton.classList.remove('hidden');
-   } else if (!video.paused) {
-      video.pause();
-      playButton.classList.add('hidden');
-   }
+// При кліку на відео
+video.addEventListener("click", function () {
+	if (!video.paused) {
+		video.pause();
+	}
+});
+// При зупинці відео (при закінченні відтворення або при натисканні кнопки стоп)
+video.addEventListener("ended", function () {
+	// Встановлюємо Z-Index для кнопки play та фото на вихідне значення
+	setZIndex(playButton, 11);
+	setZIndex(image, 11);
+	image.style.opacity = 1;
+	image.style.height = "100%";
 });

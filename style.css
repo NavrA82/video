@@ -122,6 +122,10 @@ button:is(:focus, :hover) {
 		padding-top: 72px;
 	}
 	.howtomade-img,
+	.howtomade-picture-wrapper {
+		height: 500px;
+	}
+	.howtomade-img,
 	.howtomade-img-wrap {
 		position: relative;
 	}
@@ -148,26 +152,6 @@ button:is(:focus, :hover) {
 	.howtomade-icon-wrap,
 	.howtomade-icon {
 		display: none;
-	}
-	.howtomade-img {
-		position: relative;
-		border-radius: 15px;
-		z-index: 11;
-	}
-	.hidden {
-		display: none;
-	}
-	.howtomade-video {
-		position: absolute;
-		top: 0;
-		left: 0;
-		border-radius: 15px;
-		border: 2px solid var(--Orange);
-		width: 100%;
-		max-width: 335px;
-		height: 100%;
-		z-index: 10;
-		background-color: black;
 	}
 }
 /* !##################### 768px-1199px ########################### */
@@ -211,10 +195,12 @@ button:is(:focus, :hover) {
 .howtomade-img-wrap {
 	position: relative;
 }
+
 .howtomade-img {
 	position: relative;
 	border-radius: 15px;
 	z-index: 11;
+	cursor: pointer;
 }
 .hidden {
 	display: none;
@@ -226,7 +212,6 @@ button:is(:focus, :hover) {
 	border-radius: 15px;
 	border: 2px solid var(--Orange);
 	width: 100%;
-	max-width: 335px;
 	height: 100%;
 	z-index: 10;
 	background-color: black;
@@ -271,6 +256,10 @@ button:is(:focus, :hover) {
 	.howtomade-video {
 		max-width: 614px;
 	}
+	.howtomade-picture-wrapper {
+		height: 400px;
+		width: 614px;
+	}
 	.howtomade-icon-wrap-mobile,
 	.howtomade-icon-mobile {
 		display: none;
@@ -294,7 +283,7 @@ button:is(:focus, :hover) {
 
 	.howtomade-icon {
 		stroke: var(--Main-white);
-		fill: orange;
+		fill: none;
 	}
 	.howtomade-desc-wrap {
 		padding: 32px;
@@ -319,9 +308,8 @@ button:is(:focus, :hover) {
 		row-gap: 24px;
 		padding-right: 26px;
 	}
-	.howtomade-img {
-		max-width: 600px;
-	}
+	.howtomade-img,
+	.howtomade-picture-wrapper,
 	.howtomade-video {
 		max-width: 600px;
 	}
